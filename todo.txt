@@ -1,0 +1,88 @@
+TODO — animebar.github.io
+=========================
+Things only you can fill in. Everything here is content, not code;
+edit index.html, then: git commit -am "..." && git push
+
+
+[ ] 1. ABOUT SECTION
+       index.html — search: <div class="prose">
+       Three paragraphs are currently my best guess from your GitHub bio.
+       Rewrite in your own voice. Worth covering:
+         - what you actually work on day to day
+         - what kind of problems you like
+         - one or two lines that aren't about work
+
+
+[ ] 2. SKILLS — LANGUAGES
+       index.html — search: <h3>Languages</h3>
+       Currently: Python, TypeScript, Java, C/C++, Go, SQL
+       Remove anything you wouldn't want to be interviewed on.
+       Order matters — put your strongest first.
+
+
+[ ] 3. SKILLS — INFRASTRUCTURE
+       index.html — search: <h3>Infrastructure</h3>
+       Currently: AWS, Lambda, DynamoDB, CDK, Docker, CI/CD
+       Swap in the services you actually use. Add/remove <li> items freely.
+
+
+[ ] 4. SKILLS — AI & TOOLING
+       index.html — search: AI &amp; Tooling
+       Currently: MCP, LLM agents, PyTorch, Evals, RAG
+       Same idea — make it match reality.
+
+
+[ ] 5. WORK EXPERIENCE AT AWS
+       index.html — search: 2022 — Present
+       Dates are set (2022 — Present). The three bullets are placeholders.
+       Rewrite them: lead with impact and scale, not the task list.
+       Keep it to what's publicly shareable — no internal metrics,
+       roadmaps, or unreleased product names.
+
+
+[ ] 6. WORK SECTION — AWS PRODUCTS
+       index.html — search: <span class="section-num">03</span>
+       Two cards are real (Amazon Q Developer, AWS MCP Servers) but the
+       blurbs are generic — describe your specific contribution.
+       Two cards are placeholders:
+         - "Agent evaluation & benchmarking" — confirm or reword
+         - "Another service you worked on" — replace or DELETE
+       Deleting a card is just removing its <article>...</article> block;
+       the grid re-flows on its own.
+
+
+[ ] 7. B.TECH AT IIT KHARAGPUR
+       index.html — search: 2018 — 2022
+       Dates are set. Still to confirm:
+         - exact degree name (currently "B.Tech, Computer Science")
+         - the department, if it wasn't CS
+         - the coursework bullet — swap for a thesis, project, or honour
+           if you'd rather show that
+
+
+[ ] 8. UPDATED CV
+       Save as: assets/resume.pdf
+       The "Résumé" button in the hero 404s until this file exists.
+       Then: git add assets/resume.pdf && git commit -m "Add CV" && git push
+       (Cmd+P on the site also prints a clean one-page résumé if you'd
+       rather not maintain a separate PDF.)
+
+
+[ ] 9. CONTACT FORM — optional
+       Right now the form opens the visitor's email app with the message
+       prefilled. That works everywhere with zero setup, but it does mean
+       the visitor needs a configured mail client.
+       For a true in-page submit:
+         1. Sign up at https://formspree.io (free: 50 msgs/month)
+         2. Create a form, copy the ID (e.g. xdkogqyw)
+         3. Replace YOUR_FORM_ID in index.html
+       The JS switches to AJAX submit automatically once it's a real ID.
+
+
+NOTES
+-----
+- Preview locally before pushing:  python3 -m http.server 8000
+- Live site: https://animebar.github.io  (updates ~30s after a push)
+- Restyle without touching markup: the :root block at the top of
+  assets/style.css. Changing --accent recolours the whole site.
+- Don't put anything AWS-internal on this site. It's a public repo.

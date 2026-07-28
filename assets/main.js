@@ -111,6 +111,11 @@
   var form = document.getElementById('contact-form');
   var status = document.getElementById('form-status');
 
+  // Read the address off the page's own mailto: link so there's only
+  // ever one place to update it.
+  var mailLink = document.querySelector('a[href^="mailto:"]');
+  var MAILTO = mailLink ? mailLink.getAttribute('href').split('?')[0] : '';
+
   function setStatus(message, kind) {
     if (!status) return;
     status.textContent = message;
@@ -121,12 +126,29 @@
     form.addEventListener('submit', function (event) {
       var action = form.getAttribute('action') || '';
 
-      // Endpoint not configured yet — say so instead of silently failing.
+      /* No Formspree endpoint configured yet? Rather than dead-end the
+         visitor, hand the message off to their mail client with the
+         fields prefilled. Works with zero setup; swap in a real
+         endpoint later for a proper in-page submit. */
       if (action.indexOf('YOUR_FORM_ID') !== -1) {
         event.preventDefault();
-        setStatus(
-          'Form endpoint not configured yet. See the comment in index.html — ' +
-          'or just email me directly.', 'error');
+
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+
+        var name = (form.elements.name.value || '').trim();
+        var from = (form.elements.email.value || '').trim();
+        var msg  = (form.elements.message.value || '').trim();
+
+        var subject = 'Website enquiry from ' + (name || 'your site');
+        var body = msg + '\n\n—\n' + name + (from ? ' <' + from + '>' : '');
+
+        setStatus('Opening your email app…');
+        window.location.href = MAILTO + '?subject=' +
+          encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+        setTimeout(function () {
+          setStatus('If nothing opened, email me directly at ' + MAILTO.slice(7) + '.');
+        }, 2200);
         return;
       }
 
