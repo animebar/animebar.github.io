@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — Not found · Animesh Barua</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌘</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+  .notfound {
+    min-height: 100vh;
+    display: grid; place-items: center;
+    text-align: center; padding: 2rem;
+  }
+  .notfound-code {
+    font-family: var(--mono); font-size: clamp(4rem, 16vw, 8rem);
+    font-weight: 500; line-height: 1; color: var(--accent);
+    letter-spacing: -.04em; margin: 0 0 .5rem;
+  }
+  .notfound h1 { font-size: clamp(1.4rem, 4vw, 1.9rem); margin: 0 0 .85rem; }
+  .notfound p { color: var(--text-soft); max-width: 40ch; margin: 0 auto 2rem; }
+</style>
+</head>
+<body>
+<main class="notfound">
+  <div>
+    <p class="notfound-code">404</p>
+    <h1>This page doesn't exist</h1>
+    <p>The link may be broken, or the page may have moved. Nothing you did wrong.</p>
+    <a class="btn btn-primary" href="/">Back to home</a>
+  </div>
+</main>
+<script>
+  // Match the theme choice made on the main site.
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (e) {}
+    var dark = saved
+      ? saved === 'dark'
+      : window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+  })();
+</script>
+</body>
+</html>
