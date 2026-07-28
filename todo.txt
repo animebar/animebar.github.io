@@ -68,15 +68,18 @@ edit index.html, then: git commit -am "..." && git push
        rather not maintain a separate PDF.)
 
 
-[ ] 9. CONTACT FORM — optional
-       Right now the form opens the visitor's email app with the message
-       prefilled. That works everywhere with zero setup, but it does mean
-       the visitor needs a configured mail client.
-       For a true in-page submit:
-         1. Sign up at https://formspree.io (free: 50 msgs/month)
-         2. Create a form, copy the ID (e.g. xdkogqyw)
-         3. Replace YOUR_FORM_ID in index.html
-       The JS switches to AJAX submit automatically once it's a real ID.
+[x] 9. CONTACT FORM — done and working
+       Wired to Formspree (form ID xvzelyon), verified end to end:
+       a real submission returned ok and the success message showed.
+       Messages arrive at animeshbaruah7@gmail.com.
+
+       Free-tier limits worth knowing:
+         - 50 submissions/month (they email you at 50/75/90% of it)
+         - only 30 days of history in their dashboard, so treat your
+           inbox as the permanent record
+         - max 2 notification email addresses
+       Spam: a hidden honeypot field (_gotcha) filters most bots, and
+       Formspree adds its own filtering on top.
 
 
 NOTES

@@ -440,6 +440,11 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: roun
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-soft);
 }
+/* Only flag invalid fields after the browser has actually
+   complained — not while the visitor is still typing. */
+.field input:user-invalid, .field textarea:user-invalid {
+  border-color: #d13c3c;
+}
 
 /* Off-screen, not display:none — bots skip hidden fields. */
 .honeypot {

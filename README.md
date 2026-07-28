@@ -25,16 +25,11 @@ comment banners. To restyle rather than rewrite, edit the CSS custom
 properties in the `:root` block at the top of `assets/style.css` — changing
 `--accent` recolours the whole site.
 
-### Before you publish — the placeholders
+### Still to do
 
-| Where | What to change |
-|---|---|
-| `index.html` — contact form | `YOUR_FORM_ID` → your Formspree ID (see below) |
-| `assets/resume.pdf` | Add the file (button 404s until you do) |
-
-```bash
-grep -n "YOUR_FORM_ID" index.html
-```
+See `todo.txt` — it tracks the content left to write. The only missing
+file is `assets/resume.pdf` (the hero's "Résumé" button 404s until you
+add it).
 
 ### Adding a job to the timeline
 
@@ -57,20 +52,26 @@ edit it — newest first. The shape is:
 
 The dot, connecting line, and spacing are all automatic — no CSS to touch.
 
-## Making the contact form work
+## The contact form
 
-The form needs one free third-party service because GitHub Pages is static
-and can't send email. [Formspree](https://formspree.io) free tier gives you
-50 submissions/month, no credit card:
+GitHub Pages is static hosting — it can't send email — so the form POSTs to
+[Formspree](https://formspree.io) (form ID `xvzelyon`), which forwards
+submissions to `animeshbaruah7@gmail.com`. It's set up and working.
 
-1. Sign up at https://formspree.io
-2. Create a new form → copy the endpoint ID (looks like `xdkogqyw`)
-3. In `index.html`, replace `YOUR_FORM_ID` in the form's `action`
-4. Submit the form once yourself to confirm the email arrives
+JS submits it via `fetch` so the visitor stays on the page and gets inline
+feedback. With JS disabled it still works as a plain form POST, landing on
+Formspree's own thank-you page.
 
-Until you do this, the form shows a clear "not configured yet" message
-rather than silently failing. A hidden honeypot field (`_gotcha`) filters
-most spam bots automatically.
+Free-tier limits:
+
+- **50 submissions/month** — Formspree emails you at 50%, 75%, and 90%
+- **30 days** of submission history in their dashboard, so your inbox is
+  the permanent record
+- **2** notification email addresses max
+
+Spam is filtered by a hidden honeypot field (`_gotcha`) plus Formspree's own
+filtering. To change where mail goes, update it in the Formspree dashboard —
+not in this repo.
 
 ## Local preview
 

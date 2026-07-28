@@ -268,33 +268,32 @@
         Drop a note and I'll get back to you.
       </p>
 
-      <!--
-        ┌─────────────────────────────────────────────────────────────────┐
-        │  TO MAKE THIS FORM WORK — one step, free, no server:            │
-        │  1. Go to https://formspree.io and sign up (free tier).         │
-        │  2. Create a new form, copy your endpoint ID (looks like        │
-        │     "xdkogqyw").                                               │
-        │  3. Replace YOUR_FORM_ID in the action="" below.                │
-        │  Free tier = 50 submissions/month, no credit card.              │
-        └─────────────────────────────────────────────────────────────────┘
-      -->
+      <!-- Posts to Formspree, which forwards to animeshbaruah7@gmail.com.
+           Free tier: 50 submissions/month, 30 days of history in their
+           dashboard — so treat your inbox as the real record. -->
       <form id="contact-form" class="form"
-            action="https://formspree.io/f/YOUR_FORM_ID"
+            action="https://formspree.io/f/xvzelyon"
             method="POST">
         <div class="form-row">
           <div class="field">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" autocomplete="name" required placeholder="Ada Lovelace">
+            <input type="text" id="name" name="name" autocomplete="name"
+                   required placeholder="Ada Lovelace">
           </div>
           <div class="field">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" autocomplete="email" required placeholder="ada@example.com">
+            <input type="email" id="email" name="email" autocomplete="email"
+                   required placeholder="ada@example.com">
           </div>
         </div>
         <div class="field">
           <label for="message">Message</label>
-          <textarea id="message" name="message" rows="6" required placeholder="Hi Animesh —"></textarea>
+          <textarea id="message" name="message" rows="6" required
+                    placeholder="Hi Animesh —"></textarea>
         </div>
+
+        <!-- Sets the email subject line Formspree sends you. -->
+        <input type="hidden" name="_subject" value="New message from your website">
 
         <!-- Honeypot: bots fill this, humans never see it. -->
         <div class="honeypot" aria-hidden="true">
@@ -312,6 +311,8 @@
 
       <p class="contact-alt">
         Prefer email? <a href="mailto:animeshbaruah7@gmail.com">animeshbaruah7@gmail.com</a>
+        · Also on <a href="https://www.linkedin.com/in/animesh-barua-077406182/">LinkedIn</a>
+        and <a href="https://github.com/animebar">GitHub</a>.
       </p>
     </div>
   </section>

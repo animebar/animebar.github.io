@@ -104,17 +104,13 @@
   }
 
   /* ---------------------------------------------------------
-     Contact form: AJAX submit so the visitor stays on the page.
-     Falls back to a normal form POST if fetch is unavailable
-     or the endpoint is still a placeholder.
+     Contact form: submit via fetch so the visitor stays on the
+     page and sees inline feedback. Without JS the form still
+     works — it does a normal POST and Formspree shows its own
+     thank-you page.
      --------------------------------------------------------- */
   var form = document.getElementById('contact-form');
   var status = document.getElementById('form-status');
-
-  // Read the address off the page's own mailto: link so there's only
-  // ever one place to update it.
-  var mailLink = document.querySelector('a[href^="mailto:"]');
-  var MAILTO = mailLink ? mailLink.getAttribute('href').split('?')[0] : '';
 
   function setStatus(message, kind) {
     if (!status) return;
@@ -124,39 +120,15 @@
 
   if (form && status && window.fetch) {
     form.addEventListener('submit', function (event) {
-      var action = form.getAttribute('action') || '';
-
-      /* No Formspree endpoint configured yet? Rather than dead-end the
-         visitor, hand the message off to their mail client with the
-         fields prefilled. Works with zero setup; swap in a real
-         endpoint later for a proper in-page submit. */
-      if (action.indexOf('YOUR_FORM_ID') !== -1) {
-        event.preventDefault();
-
-        if (!form.checkValidity()) { form.reportValidity(); return; }
-
-        var name = (form.elements.name.value || '').trim();
-        var from = (form.elements.email.value || '').trim();
-        var msg  = (form.elements.message.value || '').trim();
-
-        var subject = 'Website enquiry from ' + (name || 'your site');
-        var body = msg + '\n\n—\n' + name + (from ? ' <' + from + '>' : '');
-
-        setStatus('Opening your email app…');
-        window.location.href = MAILTO + '?subject=' +
-          encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-
-        setTimeout(function () {
-          setStatus('If nothing opened, email me directly at ' + MAILTO.slice(7) + '.');
-        }, 2200);
-        return;
-      }
-
       event.preventDefault();
+
+      // Let the browser surface its own validation UI first.
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+
       form.classList.add('is-sending');
       setStatus('Sending…');
 
-      fetch(action, {
+      fetch(form.getAttribute('action'), {
         method: 'POST',
         body: new FormData(form),
         headers: { Accept: 'application/json' }
@@ -165,14 +137,22 @@
           if (response.ok) {
             form.reset();
             setStatus('Thanks — your message is on its way. I\'ll reply soon.', 'ok');
-          } else {
-            return response.json().then(function (data) {
-              var detail = data && data.errors
-                ? data.errors.map(function (x) { return x.message; }).join(', ')
-                : 'Something went wrong.';
-              setStatus(detail + ' Please try again, or email me directly.', 'error');
-            });
+            return;
           }
+          /* Surface Formspree's own error text where possible: it
+             explains the actionable cases (monthly limit reached,
+             form disabled) far better than a generic message. */
+          return response.json()
+            .then(function (data) {
+              var detail = data && data.errors && data.errors.length
+                ? data.errors.map(function (x) { return x.message; }).join(', ')
+                : 'Something went wrong (error ' + response.status + ').';
+              setStatus(detail + ' You can also email me directly.', 'error');
+            })
+            .catch(function () {
+              setStatus('Something went wrong (error ' + response.status +
+                '). Please email me directly instead.', 'error');
+            });
         })
         .catch(function () {
           setStatus('Network error — please email me directly instead.', 'error');
