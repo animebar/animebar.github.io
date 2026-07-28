@@ -480,6 +480,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: roun
 }
 .footer-inner p { margin: 0; font-size: .855rem; color: var(--text-faint); }
 .footer-note { font-family: var(--mono); font-size: .78rem !important; }
+.footer-note .heart { color: #e0455f; font-style: normal; }
 
 /* =========================================================
    Scroll-in reveal (JS adds .visible)
