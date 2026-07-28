@@ -29,17 +29,33 @@ properties in the `:root` block at the top of `assets/style.css` — changing
 
 | Where | What to change |
 |---|---|
-| `index.html` — 3 places | `hello@example.com` → your real email |
 | `index.html` — contact form | `YOUR_FORM_ID` → your Formspree ID (see below) |
-| `index.html` — Experience | Second timeline entry is a template; replace or delete it |
-| `index.html` — Education | Verify the degree and years are right |
 | `assets/resume.pdf` | Add the file (button 404s until you do) |
 
-Search for `example.com` and `YOUR_FORM_ID` to find them fast:
-
 ```bash
-grep -n "example.com\|YOUR_FORM_ID" index.html
+grep -n "YOUR_FORM_ID" index.html
 ```
+
+### Adding a job to the timeline
+
+Copy an existing `<li class="timeline-item">` in the Experience section and
+edit it — newest first. The shape is:
+
+```html
+<li class="timeline-item">
+  <div class="timeline-meta">2021 — 2023</div>
+  <div class="timeline-body">
+    <h3>Job Title <span class="at">·</span> <span class="org">Company</span></h3>
+    <p class="loc">City, Country</p>
+    <ul>
+      <li>Lead with impact and scale, not the task list.</li>
+    </ul>
+    <ul class="tags small"><li>Python</li><li>AWS</li></ul>
+  </div>
+</li>
+```
+
+The dot, connecting line, and spacing are all automatic — no CSS to touch.
 
 ## Making the contact form work
 
