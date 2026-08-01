@@ -166,8 +166,8 @@
             I'm a software engineer based in Berlin, working at AWS on building
             software and tools to improve developer productivity. Right now my
             primary focus is on <strong>MCP servers</strong> that let AI agents
-            work safely against real AWS infrastructure, and on improving how
-            well AI agents perform and recommend across general AWS tasks.
+            work safely against real AWS infrastructure, and on how well AI
+            agents perform on real AWS work.
           </p>
           <p>
             I like problems where there's ambiguity and complexity, and I like
@@ -224,7 +224,7 @@
             <p class="loc">Berlin, Germany</p>
             <ul>
               <li>Build MCP servers for AWS, letting AI agents work against real AWS infrastructure. My main contribution is the remote <a href="https://awslabs.github.io/mcp/servers/aws-knowledge-mcp-server">AWS Knowledge MCP Server</a>.</li>
-              <li>Work across several ongoing efforts to improve how well AI agents perform and recommend on AWS for general tasks — not one product, but the underlying quality. <a href="https://aws.amazon.com/about-aws/whats-new/2026/07/aws-bench/">AWS Bench</a> is one piece of that, covering agent evaluation.</li>
+              <li>Improve how well AI agents perform on real AWS work — diagnosing misconfigurations, provisioning infrastructure, and operating live cloud environments. Identify and curate the AWS tasks agents fail on, turning those gaps into the datasets that direct evaluation; <a href="https://github.com/aws-bench/aws-bench">AWS Bench</a> is one piece of that.</li>
             </ul>
             <ul class="tags small">
               <li>Python</li><li>TypeScript</li><li>AWS</li><li>MCP</li><li>Agent eval</li>
@@ -237,7 +237,7 @@
             <h3>Software Engineer I <span class="at">·</span> <span class="org"><a href="https://aws.amazon.com/">Amazon Web Services</a></span></h3>
             <p class="loc">Berlin, Germany</p>
             <ul>
-              <li>Built agent features in <a href="https://aws.amazon.com/q/developer/">Amazon Q Developer</a>: <a href="https://aws.amazon.com/blogs/devops/unlocking-aws-console-diagnosing-errors-with-amazon-q-developer/">Diagnose with Amazon Q</a>, a troubleshooting agent, and <a href="https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/chat-actions.html">resource introspection</a>, an agent for inspecting and managing AWS resources.</li>
+              <li>Built agent features in <a href="https://aws.amazon.com/q/developer/">Amazon Q Developer</a>: <a href="https://aws.amazon.com/blogs/devops/unlocking-aws-console-diagnosing-errors-with-amazon-q-developer/">Diagnose with Amazon Q</a>, which explains the root cause of an AWS Management Console error in natural language and returns ordered steps to resolve it — featured in the AWS re:Invent 2023 keynote — and <a href="https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/chat-actions.html">resource introspection</a>, built with the Strands SDK — an agentic experience that answers questions about a live AWS environment by breaking the query into steps, picking tools from AWS APIs across 200+ services, and combining the results.</li>
               <li>Worked on a managed development environment service that helps power products including the <a href="https://aws.amazon.com/cloudshell/">AWS CloudShell</a> IDE.</li>
             </ul>
             <ul class="tags small">
@@ -295,9 +295,10 @@
           </div>
           <h3>AWS Knowledge MCP Server</h3>
           <p>
-            A remote MCP server giving AI agents access to authoritative,
-            up-to-date AWS knowledge — hosted, so there's nothing to run
-            locally. My main contribution at AWS.
+            A fully managed remote MCP server giving AI agents real-time access
+            to AWS documentation, API references, regional availability for APIs
+            and CloudFormation resources, and agent skills — with no local
+            setup. My main contribution at AWS.
           </p>
           <ul class="tags small"><li>AWS</li><li>MCP</li><li>Python</li><li>Open source</li></ul>
         </article>
@@ -321,16 +322,16 @@
         <article class="card">
           <div class="card-top">
             <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
-            <a class="card-link" href="https://aws.amazon.com/about-aws/whats-new/2026/07/aws-bench/" aria-label="Read the AWS Bench announcement">
+            <a class="card-link" href="https://github.com/aws-bench/aws-bench" aria-label="View AWS Bench on GitHub">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
             </a>
           </div>
           <h3>AWS Bench</h3>
           <p>
-            An open-source benchmark for evaluating how well AI agents perform
-            on AWS. It's one project within a broader push I work on —
-            improving agent performance and recommendation quality for general
-            AWS tasks, not just measuring it.
+            An open-source benchmark that scores agent and model combinations
+            against disposable, real AWS accounts rather than static fixtures —
+            deploying CDK scenarios, running agents in sandboxed containers,
+            and verifying against live AWS state.
           </p>
           <ul class="tags small"><li>AWS</li><li>Agent eval</li><li>Benchmarking</li><li>Open source</li></ul>
         </article>
@@ -346,9 +347,11 @@
           <p>
             AWS's generative-AI assistant for builders. I built two agents in
             it: <a href="https://aws.amazon.com/blogs/devops/unlocking-aws-console-diagnosing-errors-with-amazon-q-developer/">Diagnose
-            with Amazon Q</a> for troubleshooting console errors, and
+            with Amazon Q</a>, which explains the root cause of a console error
+            and gives ordered steps to fix it, and
             <a href="https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/chat-actions.html">resource
-            introspection</a> for inspecting and managing AWS resources.
+            introspection</a>, which reasons across AWS APIs to answer questions
+            about a live AWS environment.
           </p>
           <ul class="tags small"><li>AWS</li><li>LLM agents</li><li>Developer tools</li></ul>
         </article>
