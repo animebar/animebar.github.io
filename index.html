@@ -4,21 +4,78 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Animesh Barua — Software Engineer</title>
-<meta name="description" content="Animesh Barua — software engineer at AWS in Berlin. Building Amazon Q and MCP servers for AWS.">
+<meta name="description" content="Animesh Barua — software engineer at AWS in Berlin. Building MCP servers for AWS, and working on agent evaluation and benchmarking.">
 
 <!-- Social preview -->
 <meta property="og:title" content="Animesh Barua — Software Engineer">
-<meta property="og:description" content="Software engineer at AWS in Berlin. Building Amazon Q and MCP servers for AWS.">
+<meta property="og:description" content="Software engineer at AWS in Berlin. Building MCP servers for AWS, and working on agent evaluation and benchmarking.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://animebar.github.io/">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/45335572?v=4">
 <meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://animebar.github.io/">
+
+<!-- Set the theme before the stylesheet loads, so dark-mode visitors never
+     see a flash of the light theme. main.js re-applies the same value once
+     it runs; this block only exists to win the race against first paint.
+     404.html carries its own copy. -->
+<script>
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (e) { /* private mode */ }
+    var dark = saved
+      ? saved === 'dark'
+      : window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+  })();
+</script>
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌘</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+
+<!-- Structured data: tells search engines this page is a person, and ties
+     it to the GitHub and LinkedIn profiles of the same person. Keep the
+     facts here in sync with the page itself. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Animesh Barua",
+  "url": "https://animebar.github.io/",
+  "image": "https://avatars.githubusercontent.com/u/45335572?v=4",
+  "jobTitle": "Software Engineer II",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Amazon Web Services",
+    "url": "https://aws.amazon.com/"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Indian Institute of Technology Kharagpur",
+    "url": "https://www.iitkgp.ac.in/"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Berlin",
+    "addressCountry": "DE"
+  },
+  "knowsAbout": [
+    "Model Context Protocol",
+    "AI agents",
+    "Agent evaluation",
+    "Developer tooling",
+    "Amazon Web Services"
+  ],
+  "sameAs": [
+    "https://github.com/animebar",
+    "https://www.linkedin.com/in/animesh-barua-077406182/"
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -49,8 +106,9 @@
         <p class="eyebrow">Berlin, Germany</p>
         <h1>Animesh Barua</h1>
         <p class="tagline">
-          Software engineer at <strong>AWS</strong>. I build developer tooling —
-          currently working on Amazon Q and MCP servers for AWS.
+          Software engineer at <strong>AWS</strong>. I build software and tools
+          that make developers more productive — currently MCP servers, and
+          improving how well AI agents work against AWS.
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#contact">Get in touch</a>
@@ -81,15 +139,15 @@
         </div>
 <pre class="hero-card-body"><code><span class="c-com"># whoami</span>
 <span class="c-key">name</span>     = <span class="c-str">"Animesh Barua"</span>
-<span class="c-key">role</span>     = <span class="c-str">"Software Engineer"</span>
+<span class="c-key">role</span>     = <span class="c-str">"Software Engineer II"</span>
 <span class="c-key">company</span>  = <span class="c-str">"AWS"</span>
 <span class="c-key">based_in</span> = <span class="c-str">"Berlin, DE"</span>
 
 <span class="c-key">focus</span> = [
-  <span class="c-str">"developer tooling"</span>,
   <span class="c-str">"MCP servers"</span>,
-  <span class="c-str">"LLM agents"</span>,
-  <span class="c-str">"distributed systems"</span>,
+  <span class="c-str">"AI agents"</span>,
+  <span class="c-str">"agent performance"</span>,
+  <span class="c-str">"developer productivity"</span>,
 ]
 
 <span class="c-com"># always shipping</span>
@@ -105,42 +163,48 @@
       <div class="about-grid">
         <div class="prose">
           <p>
-            I'm a software engineer based in Berlin, working at AWS on developer
-            tooling. Most of my day is spent on <strong>Amazon Q</strong> and on
-            building <strong>MCP servers</strong> that let AI agents work safely
-            against real AWS infrastructure.
+            I'm a software engineer based in Berlin, working at AWS on building
+            software and tools to improve developer productivity. Right now my
+            primary focus is on <strong>MCP servers</strong> that let AI agents
+            work safely against real AWS infrastructure, and on improving how
+            well AI agents perform and recommend across general AWS tasks.
           </p>
           <p>
-            I like problems where correctness matters and the feedback loop is
-            slow — the ones you can't brute-force. Lately that's meant a lot of
-            time on agent evaluation, benchmarking, and making tools that other
-            engineers actually want to use.
+            I like problems where there's ambiguity and complexity, and I like
+            it when the feedback loop is fast. I plan and understand a problem
+            before jumping into solving it — the same applies to my day to day.
+            Planning and consistency.
           </p>
           <p>
-            Outside of work I read a lot, tinker with small side projects, and
-            occasionally contribute to open source.
+            Outside of work I tinker with small side projects, explore my own
+            ideas, and concentrate on my fitness. P.S. I love to play football.
+          </p>
+          <p>
+            I'm learning the guitar at the moment, mostly so that one day I can
+            play <em>Hey There Delilah</em>. The violin came before that — I
+            have a Madhyama degree in it.
           </p>
         </div>
         <div class="skills">
           <div class="skill-group">
             <h3>Languages</h3>
             <ul class="tags">
-              <li>Python</li><li>TypeScript</li><li>Java</li>
-              <li>C / C++</li><li>Go</li><li>SQL</li>
+              <li>Python</li><li>TypeScript</li><li>C / C++</li>
+              <li>Java</li><li>Kotlin</li>
             </ul>
           </div>
           <div class="skill-group">
             <h3>Infrastructure</h3>
             <ul class="tags">
-              <li>AWS</li><li>Lambda</li><li>DynamoDB</li>
-              <li>CDK</li><li>Docker</li><li>CI/CD</li>
+              <li>AWS</li><li>CI/CD</li><li>Docker</li>
+              <li>CDK</li><li>OpenTelemetry</li>
             </ul>
           </div>
           <div class="skill-group">
             <h3>AI &amp; Tooling</h3>
             <ul class="tags">
-              <li>MCP</li><li>LLM agents</li><li>PyTorch</li>
-              <li>Evals</li><li>RAG</li>
+              <li>MCP</li><li>Agentic AI</li><li>Strands SDK</li><li>LLM</li>
+              <li>Agent eval</li><li>RAG</li><li>LangChain</li>
             </ul>
           </div>
         </div>
@@ -154,27 +218,58 @@
       <h2 class="section-title"><span class="section-num">02</span> Experience</h2>
       <ol class="timeline">
         <li class="timeline-item">
-          <div class="timeline-meta">2022 — Present</div>
+          <div class="timeline-meta">Dec 2024 — Present</div>
           <div class="timeline-body">
-            <h3>Software Engineer <span class="at">·</span> <span class="org">Amazon Web Services</span></h3>
+            <h3>Software Engineer II <span class="at">·</span> <span class="org"><a href="https://aws.amazon.com/">Amazon Web Services</a></span></h3>
             <p class="loc">Berlin, Germany</p>
             <ul>
-              <li>Build and operate developer-facing tooling for Amazon Q, used by engineers across AWS.</li>
-              <li>Design and ship MCP servers that expose AWS capabilities to AI agents with least-privilege guardrails.</li>
-              <li>Own evaluation and benchmarking infrastructure for agent quality regression testing.</li>
+              <li>Build MCP servers for AWS, letting AI agents work against real AWS infrastructure. My main contribution is the remote <a href="https://awslabs.github.io/mcp/servers/aws-knowledge-mcp-server">AWS Knowledge MCP Server</a>.</li>
+              <li>Work across several ongoing efforts to improve how well AI agents perform and recommend on AWS for general tasks — not one product, but the underlying quality. <a href="https://aws.amazon.com/about-aws/whats-new/2026/07/aws-bench/">AWS Bench</a> is one piece of that, covering agent evaluation.</li>
             </ul>
             <ul class="tags small">
-              <li>Python</li><li>TypeScript</li><li>AWS</li><li>MCP</li><li>LLM evals</li>
+              <li>Python</li><li>TypeScript</li><li>AWS</li><li>MCP</li><li>Agent eval</li>
+            </ul>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-meta">Sep 2022 — Nov 2024</div>
+          <div class="timeline-body">
+            <h3>Software Engineer I <span class="at">·</span> <span class="org"><a href="https://aws.amazon.com/">Amazon Web Services</a></span></h3>
+            <p class="loc">Berlin, Germany</p>
+            <ul>
+              <li>Built agent features in <a href="https://aws.amazon.com/q/developer/">Amazon Q Developer</a>: <a href="https://aws.amazon.com/blogs/devops/unlocking-aws-console-diagnosing-errors-with-amazon-q-developer/">Diagnose with Amazon Q</a>, a troubleshooting agent, and <a href="https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/chat-actions.html">resource introspection</a>, an agent for inspecting and managing AWS resources.</li>
+              <li>Worked on a managed development environment service that helps power products including the <a href="https://aws.amazon.com/cloudshell/">AWS CloudShell</a> IDE.</li>
+            </ul>
+            <ul class="tags small">
+              <li>Java</li><li>TypeScript</li><li>AWS</li><li>LLM agents</li>
+            </ul>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-meta">May 2021 — Jul 2021</div>
+          <div class="timeline-body">
+            <h3>Software Engineer Intern <span class="at">·</span> <span class="org"><a href="https://www.huawei.com/">Huawei</a></span></h3>
+            <p class="loc">Bangalore, India</p>
+            <ul>
+              <li>Built an ad recommendation system for the ads division on DIEN, a deep-learning CTR model, using TensorFlow and DeepCTR.</li>
+              <li>Diagnosed and fixed the base model's cold-start problem, lifting AUC from 0.5 — no better than random — to 0.57.</li>
+              <li>Devised a data extraction algorithm for richer user-history training data and improved it from O(n²) to O(n), reaching a final AUC of 0.6863.</li>
+            </ul>
+            <ul class="tags small">
+              <li>Python</li><li>TensorFlow</li><li>Recommender systems</li>
             </ul>
           </div>
         </li>
         <li class="timeline-item">
           <div class="timeline-meta">2018 — 2022</div>
           <div class="timeline-body">
-            <h3>B.Tech, Computer Science <span class="at">·</span> <span class="org">IIT Kharagpur</span></h3>
+            <h3>B.Tech, Computer Science and Engineering <span class="at">·</span> <span class="org"><a href="https://www.iitkgp.ac.in/">IIT Kharagpur</a></span></h3>
             <p class="loc">Kharagpur, India</p>
             <ul>
-              <li>Coursework in algorithms, operating systems, DBMS, and machine learning.</li>
+              <li>Term project on <a href="https://github.com/animebar/Algorithms-2-IIT-KGP_SEM5">graph and geometric algorithms</a> in C, under Prof. Arobinda Gupta — implemented Ford–Fulkerson for maximum flow, extended it to maximise need-based flow across producer–consumer nodes, and adapted Graham's Scan to compute the area enclosed by circular-shaped cities.</li>
+              <li>Coursework across algorithms, operating systems, computer networks, DBMS, machine learning, and computer architecture.</li>
+              <li>NSS volunteer — taught underprivileged children and organised cleanliness-awareness and blood-donation camps.</li>
+              <li>Global rank 281 in <a href="assets/kickstart-2021-certificate.pdf">Google Kick Start 2021</a>.</li>
             </ul>
           </div>
         </li>
@@ -191,22 +286,20 @@
       </p>
       <div class="cards">
 
-        <!-- TODO: tighten these blurbs to describe your specific contribution.
-             Keep to what's already public about each product. -->
         <article class="card">
           <div class="card-top">
             <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg>
-            <a class="card-link" href="https://aws.amazon.com/q/developer/" aria-label="Learn about Amazon Q Developer">
+            <a class="card-link" href="https://awslabs.github.io/mcp/servers/aws-knowledge-mcp-server" aria-label="Read the AWS Knowledge MCP Server docs">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
             </a>
           </div>
-          <h3>Amazon Q Developer</h3>
+          <h3>AWS Knowledge MCP Server</h3>
           <p>
-            AWS's generative-AI assistant for builders. I work on the developer
-            tooling behind it, helping engineers ship faster across the AWS
-            console, IDEs, and CLI.
+            A remote MCP server giving AI agents access to authoritative,
+            up-to-date AWS knowledge — hosted, so there's nothing to run
+            locally. My main contribution at AWS.
           </p>
-          <ul class="tags small"><li>LLM agents</li><li>Developer tools</li><li>AWS</li></ul>
+          <ul class="tags small"><li>AWS</li><li>MCP</li><li>Python</li><li>Open source</li></ul>
         </article>
 
         <article class="card">
@@ -218,44 +311,65 @@
           </div>
           <h3>AWS MCP Servers</h3>
           <p>
-            Open-source Model Context Protocol servers that let AI agents work
-            against real AWS infrastructure with least-privilege guardrails.
+            The open-source project the Knowledge server is part of — Model
+            Context Protocol servers that let AI agents work against real AWS
+            infrastructure with least-privilege guardrails.
           </p>
-          <ul class="tags small"><li>Python</li><li>MCP</li><li>Open source</li></ul>
+          <ul class="tags small"><li>AWS</li><li>MCP</li><li>Python</li><li>Open source</li></ul>
         </article>
 
-        <!-- TODO: replace or delete these two once you decide which other
-             services to feature. Copy the <article> shape above. -->
         <article class="card">
           <div class="card-top">
             <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
+            <a class="card-link" href="https://aws.amazon.com/about-aws/whats-new/2026/07/aws-bench/" aria-label="Read the AWS Bench announcement">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+            </a>
           </div>
-          <h3>Agent evaluation &amp; benchmarking</h3>
+          <h3>AWS Bench</h3>
           <p>
-            Internal evaluation infrastructure for measuring agent quality and
-            catching regressions before they reach customers.
+            An open-source benchmark for evaluating how well AI agents perform
+            on AWS. It's one project within a broader push I work on —
+            improving agent performance and recommendation quality for general
+            AWS tasks, not just measuring it.
           </p>
-          <ul class="tags small"><li>Python</li><li>Evals</li><li>Benchmarking</li></ul>
+          <ul class="tags small"><li>AWS</li><li>Agent eval</li><li>Benchmarking</li><li>Open source</li></ul>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 8l-5 4 5 4M15 8l5 4-5 4"/></svg>
+            <a class="card-link" href="https://aws.amazon.com/q/developer/" aria-label="Learn about Amazon Q Developer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+            </a>
+          </div>
+          <h3>Amazon Q Developer</h3>
+          <p>
+            AWS's generative-AI assistant for builders. I built two agents in
+            it: <a href="https://aws.amazon.com/blogs/devops/unlocking-aws-console-diagnosing-errors-with-amazon-q-developer/">Diagnose
+            with Amazon Q</a> for troubleshooting console errors, and
+            <a href="https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/chat-actions.html">resource
+            introspection</a> for inspecting and managing AWS resources.
+          </p>
+          <ul class="tags small"><li>AWS</li><li>LLM agents</li><li>Developer tools</li></ul>
         </article>
 
         <article class="card">
           <div class="card-top">
             <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg>
+            <a class="card-link" href="https://aws.amazon.com/cloudshell/" aria-label="Learn about AWS CloudShell">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+            </a>
           </div>
-          <h3>Another service you worked on</h3>
+          <h3>Managed development environments</h3>
           <p>
-            Placeholder — swap in a third AWS service and describe it in a
-            sentence or two, or delete this card entirely.
+            A managed development environment service that helps power AWS
+            products including the CloudShell IDE — browser-based shells and
+            editors with no local setup.
           </p>
-          <ul class="tags small"><li>AWS</li></ul>
+          <ul class="tags small"><li>AWS</li><li>Developer tools</li><li>Managed services</li></ul>
         </article>
 
       </div>
-      <p class="see-all">
-        <a href="https://github.com/animebar?tab=repositories">Side projects on GitHub
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-      </p>
     </div>
   </section>
 
@@ -264,8 +378,9 @@
     <div class="wrap contact-wrap">
       <h2 class="section-title"><span class="section-num">04</span> Contact</h2>
       <p class="section-lede">
-        Happy to talk about developer tooling, AI agents, or anything AWS.
-        Drop a note and I'll get back to you.
+        I'm open to talking about pretty much anything — whatever you're
+        building, an idea you want to think through, football, or a book I
+        should read. Drop a note and I'll get back to you.
       </p>
 
       <!-- Posts to Formspree, which forwards to animeshbaruah7@gmail.com.
@@ -321,7 +436,6 @@
 
 <footer class="site-footer">
   <div class="wrap footer-inner">
-    <p>© <span id="year">2026</span> Animesh Barua</p>
     <p class="footer-note">Built and maintained by an agent <span class="heart" aria-label="love">&#9829;</span></p>
   </div>
 </footer>

@@ -16,6 +16,9 @@ assets/main.js      Dark mode, scroll effects, contact form submit
 assets/resume.pdf   Drop your résumé here (the "Résumé" button links to it)
 404.html            Friendly not-found page
 .nojekyll           Tells GitHub Pages to skip Jekyll processing
+robots.txt          Crawler rules; points at the sitemap
+sitemap.xml         Single-page sitemap for search engines
+LICENSE             MIT
 ```
 
 ## Editing content
@@ -27,9 +30,8 @@ properties in the `:root` block at the top of `assets/style.css` — changing
 
 ### Still to do
 
-See `todo.txt` — it tracks the content left to write. The only missing
-file is `assets/resume.pdf` (the hero's "Résumé" button 404s until you
-add it).
+The only missing file is `assets/resume.pdf` — the hero's "Résumé"
+button 404s until you add it.
 
 ### Adding a job to the timeline
 
@@ -121,3 +123,16 @@ Hosting stays free — you'd only pay a registrar for the domain.
   the nav, terminal card, and form.
 - Everything is keyboard navigable with a skip link and visible focus rings;
   animations respect `prefers-reduced-motion`.
+
+## License
+
+[MIT](LICENSE) for the **code** — borrow the markup, CSS, and JS freely; just
+keep the copyright line.
+
+The **content** is not MIT: the bio, About text, work and education history,
+and `assets/resume.pdf` are all rights reserved. Reuse the site, not the
+person — take the design, replace the words with your own.
+
+There's deliberately no `©` notice in the footer: copyright is automatic under
+the Berne Convention, so the notice did no legal work, and the `LICENSE` file
+is the signal that actually matters on a public repo.

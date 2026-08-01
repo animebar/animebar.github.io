@@ -407,14 +407,6 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: roun
 .card p { font-size: .915rem; color: var(--text-soft); margin-bottom: 1.1rem; }
 .card .tags { margin-top: auto; }
 
-.see-all { margin-top: 2rem; }
-.see-all a {
-  display: inline-flex; align-items: center; gap: .45rem;
-  font-family: var(--mono); font-size: .87rem; font-weight: 500;
-}
-.see-all svg { width: 15px; height: 15px; transition: transform .18s ease; }
-.see-all a:hover svg { transform: translateX(3px); }
-
 /* =========================================================
    Contact form
    ========================================================= */
@@ -481,7 +473,8 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: roun
 }
 .footer-inner {
   display: flex; flex-wrap: wrap; gap: .5rem 1.5rem;
-  align-items: center; justify-content: space-between;
+  align-items: center; justify-content: center;
+  text-align: center;
 }
 .footer-inner p { margin: 0; font-size: .855rem; color: var(--text-faint); }
 .footer-note { font-family: var(--mono); font-size: .78rem !important; }
@@ -504,7 +497,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: roun
    ========================================================= */
 @media print {
   .site-header, .theme-toggle, .hero-card, .hero-actions,
-  #contact .form, .see-all, .site-footer { display: none !important; }
+  #contact .form, .site-footer { display: none !important; }
   body { background: #fff; color: #000; font-size: 11pt; }
   .section, .hero { padding: .6rem 0; }
   .section-alt { background: #fff; border: none; }

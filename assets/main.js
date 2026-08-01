@@ -8,9 +8,10 @@
 
   /* ---------------------------------------------------------
      Theme: respect saved choice, else follow the OS.
-     The inline-free approach means a brief flash is possible;
-     to kill it entirely, move this block into a <script> in
-     <head> before the stylesheet.
+     An inline copy of this logic runs in <head> so first paint
+     already has the right theme — keep the two in sync. What
+     lives only here is the toggle, the aria-label, and the
+     OS-change listener.
      --------------------------------------------------------- */
   var root = document.documentElement;
   var STORAGE_KEY = 'theme';
@@ -163,9 +164,4 @@
     });
   }
 
-  /* ---------------------------------------------------------
-     Footer year.
-     --------------------------------------------------------- */
-  var year = document.getElementById('year');
-  if (year) year.textContent = String(new Date().getFullYear());
 })();
