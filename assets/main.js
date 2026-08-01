@@ -164,4 +164,22 @@
     });
   }
 
+  /* ---------------------------------------------------------
+     Footer "last updated" date.
+     Read from the page's own Last-Modified header, which GitHub
+     Pages sets on every deploy — so it stays honest without
+     anyone remembering to edit it. Falls back to the hardcoded
+     date in the markup if the header is missing or unparseable
+     (opening the file directly from disk, for instance).
+     --------------------------------------------------------- */
+  var updated = document.getElementById('updated');
+  if (updated) {
+    var when = new Date(document.lastModified);
+    if (!isNaN(when.getTime())) {
+      updated.setAttribute('datetime', when.toISOString().slice(0, 10));
+      updated.textContent = when.toLocaleDateString('en-GB', {
+        day: 'numeric', month: 'long', year: 'numeric'
+      });
+    }
+  }
 })();
